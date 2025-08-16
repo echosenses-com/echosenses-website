@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-slate-950 text-slate-200">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECHOsenses | Cognitive Augmentation Suite</title>
+    <!-- Montserrat Font for a modern, bold feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- The 3D animation will render inside this canvas element -->
+    <canvas id="three-canvas"></canvas>
+
+    <!-- Loading Indicator -->
+    <div id="loading-overlay">Loading...</div>
+
+    <!-- Navigation Bar with Animated Logo -->
+    <nav class="fixed top-0 left-0 w-full z-20 flex items-center justify-between p-6 bg-slate-950/70 backdrop-blur-sm rounded-b-xl">
+        <!-- Logo Section -->
+        <a href="#" class="flex items-center space-x-4 transition-transform transform hover:scale-105">
+            <!-- Animated Holographic Logo -->
+            <div class="logo-icon">
+                <div class="logo-hologram"></div>
+            </div>
+            <!-- Logo Text -->
+            <span class="text-3xl font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-600 logo-text">ECHOsenses</span>
+        </a>
+        
+        <!-- Navigation Links -->
+        <div class="hidden md:flex items-center space-x-8">
+            <a href="#" class="text-slate-400 font-bold transition-colors hover:text-cyan-400">Home</a>
+            <a href="#about" class="text-slate-400 font-bold transition-colors hover:text-cyan-400">About</a>
+            <a href="#features" class="text-slate-400 font-bold transition-colors hover:text-cyan-400">Features</a>
+            <a href="#contact" class="text-slate-400 font-bold transition-colors hover:text-cyan-400">Contact</a>
+        </div>
+        
+        <!-- Mobile Hamburger Menu -->
+        <div class="hamburger md:hidden">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative z-10 min-h-screen flex flex-col items-center justify-center p-6 sm:p-12 md:p-24">
+        <header class="text-center space-y-6 max-w-4xl mx-auto">
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-600">
+                Real-time Knowledge.<br>Seamlessly Augmented<br>with AI.
+            </h1>
+             <div class="inline-block px-6 py-2 text-sm font-semibold rounded-full text-white bg-gradient-to-r from-green-400 to-emerald-600 shadow-md animate-pulse mt-4">
+                In Beta Testing
+            </div>
+            <p class="text-xl sm:text-2xl font-light text-slate-300 max-w-3xl mx-auto">
+                Your personal cognitive augmentation suite. Experience real-time knowledge synthesis and context-aware data visualization.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
+                <a href="#features" class="inline-block px-8 py-3 text-lg font-bold text-white bg-gradient-to-r from-cyan-500 to-fuchsia-500 rounded-full shadow-lg hover:from-cyan-600 hover:to-fuchsia-600 transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-950">
+                    Explore the Future
+                </a>
+                <a href="#about" class="inline-block px-8 py-3 text-lg font-bold text-cyan-400 border-2 border-cyan-400 rounded-full hover:bg-cyan-400 hover:text-slate-950 transition-all transform hover:scale-105">
+                    Learn More
+                </a>
+            </div>
+        </header>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="relative z-10 w-full py-20 bg-slate-950/70 backdrop-blur-sm">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-white">About ECHOsenses</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <p class="text-lg text-slate-300 leading-relaxed">
+                        ECHOsenses represents the future of human-computer interaction, combining advanced AI processing with intuitive visualization to augment your cognitive abilities.
+                    </p>
+                    <p class="text-lg text-slate-300 leading-relaxed">
+                        Our suite integrates real-time voice-to-text processing, local LLM analysis, and a revolutionary stealth HUD system to provide seamless knowledge enhancement.
+                    </p>
+                </div>
+                <div class="grid grid-cols-3 gap-6 text-center">
+                    <div class="cyber-card rounded-xl p-6">
+                        <div class="text-3xl font-bold text-cyan-400">99.9%</div>
+                        <div class="text-slate-400">Accuracy</div>
+                    </div>
+                    <div class="cyber-card rounded-xl p-6">
+                        <div class="text-3xl font-bold text-cyan-400">0.1s</div>
+                        <div class="text-slate-400">Response</div>
+                    </div>
+                    <div class="cyber-card rounded-xl p-6">
+                        <div class="text-3xl font-bold text-cyan-400">100%</div>
+                        <div class="text-slate-400">Privacy</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="relative z-10 w-full py-20 bg-slate-950/70 backdrop-blur-sm">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-white">Core Features</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="cyber-card rounded-2xl p-8 transition-all duration-300 transform hover:scale-105">
+                    <div class="flex items-center justify-center mb-6">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-cyan-500 to-fuchsia-500 flex items-center justify-center text-2xl">
+                            🎤
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 text-center">Real-time Voice Processing</h3>
+                    <p class="text-slate-300 text-center">Advanced voice-to-text with contextual understanding and multi-language support.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="cyber-card rounded-2xl p-8 transition-all duration-300 transform hover:scale-105">
+                    <div class="flex items-center justify-center mb-6">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-cyan-500 to-fuchsia-500 flex items-center justify-center text-2xl">
+                            🧠
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 text-center">Local LLM Processing</h3>
+                    <p class="text-slate-300 text-center">On-device AI processing ensures privacy while delivering instant insights and analysis.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="cyber-card rounded-2xl p-8 transition-all duration-300 transform hover:scale-105">
+                    <div class="flex items-center justify-center mb-6">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-cyan-500 to-fuchsia-500 flex items-center justify-center text-2xl">
+                            👁️
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 text-center">Stealth HUD System</h3>
+                    <p class="text-slate-300 text-center">Invisible augmented reality overlay providing contextual information without distraction.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="cyber-card rounded-2xl p-8 transition-all duration-300 transform hover:scale-105">
+                    <div class="flex items-center justify-center mb-6">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-cyan-500 to-fuchsia-500 flex items-center justify-center text-2xl">
+                            📊
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 text-center">Data Visualization</h3>
+                    <p class="text-slate-300 text-center">Dynamic, context-aware visual representations of complex information patterns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meeting Platform Compatibility Section -->
+    <section class="relative z-10 w-full py-20 bg-slate-950/70 backdrop-blur-sm">
+    <div class="container mx-auto px-6 max-w-6xl text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-white">Compatible with ALL Meeting Platforms</h2>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-center">
+            <div class="platform-logo cursor-pointer flex flex-col items-center justify-center hover:scale-110 transition-all">
+                <a href="#" class="w-full flex justify-center">
+                    <img src="./assets/images/google-meet.png" alt="Google Meet Logo" class="**w-20 h-20**">
+                </a>
+            </div>
+            <div class="platform-logo cursor-pointer flex flex-col items-center justify-center hover:scale-110 transition-all">
+                <a href="#" class="w-full flex justify-center">
+                    <img src="./assets/images/zoom.png" alt="Zoom Logo" class="**w-20 h-20**">
+                </a>
+            </div>
+            <div class="platform-logo cursor-pointer flex flex-col items-center justify-center hover:scale-110 transition-all">
+                <a href="#" class="w-full flex justify-center">
+                    <img src="./assets/images/microsoft-teams.png" alt="Microsoft Teams Logo" class="**w-20 h-20**">
+                </a>
+            </div>
+            <div class="platform-logo cursor-pointer flex flex-col items-center justify-center hover:scale-110 transition-all">
+                <a href="#" class="w-full flex justify-center">
+                    <img src="./assets/images/webex.png" alt="Webex Logo" class="**w-20 h-20**">
+                </a>
+            </div>
+            <div class="platform-logo cursor-pointer flex flex-col items-center justify-center hover:scale-110 transition-all">
+                <a href="#" class="w-full flex justify-center">
+                    <img src="./assets/images/skype.png" alt="Skype Logo" class="**w-20 h-20**">
+                </a>
+            </div>
+        </div>
+    </div>
+    </section>
+  
+    <!-- Call to Action Section -->
+    <section class="relative z-10 w-full py-20 bg-gradient-to-br from-cyan-500 to-fuchsia-500 text-center">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-4xl font-extrabold text-white mb-4">Unlock Deeper Understanding.</h2>
+            <p class="text-xl text-white opacity-90 mb-8">
+                ECHOsenses provides contextual insights right when you need them, so you can focus on the bigger picture.
+            </p>
+            <a href="#features" class="inline-block px-10 py-4 text-xl font-bold text-slate-950 bg-white rounded-full shadow-xl hover:bg-slate-200 transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent">
+                Discover Insights
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="relative z-10 w-full py-20 bg-slate-950/70 backdrop-blur-sm">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center text-white">Get in Touch</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-cyan-400">Ready to augment your reality?</h3>
+                    <p class="text-lg text-slate-300">
+                        Join the future of cognitive enhancement with ECHOsenses.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <span class="text-cyan-400 font-bold">Email:</span>
+                            <span class="text-white">echosensesinfo@gmail.com</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <span class="text-cyan-400 font-bold">Phase:</span>
+                            <span class="text-white">Beta Testing</span>
+                        </div>
+                    </div>
+                </div>
+                <form class="cyber-card rounded-xl p-6 space-y-4">
+                    <input type="text" placeholder="Your Name" required class="w-full p-3 bg-slate-800/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-cyan-400 focus:outline-none">
+                    <input type="email" placeholder="Your Email" required class="w-full p-3 bg-slate-800/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-cyan-400 focus:outline-none">
+                    <textarea placeholder="Your Message" rows="5" required class="w-full p-3 bg-slate-800/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:border-cyan-400 focus:outline-none resize-none"></textarea>
+                    <button type="submit" class="w-full py-3 bg-gradient-to-r from-cyan-500 to-fuchsia-500 text-white font-bold rounded-lg hover:from-cyan-600 hover:to-fuchsia-600 transition-all transform hover:scale-105">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative z-10 text-center py-6 text-slate-500 text-sm bg-slate-950/70 backdrop-blur-sm">
+        <p>&copy; 2025 ECHOsenses. Augmenting human potential.</p>
+    </footer>
+    
+    <!-- Three.js library from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

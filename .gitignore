@@ -1,0 +1,15 @@
+# This is a comment, and the line will be ignored by Git.
+
+# Ignore the node_modules folder and related files
+# These files are not needed in your repository and can cause issues.
+node_modules/
+package.json
+package-lock.json
+
+# Ignore backup files and unnecessary files
+# This helps keep your project clean and prevents Netlify from getting confused.
+* - Backup good.html
+* - Backup good different.html
+* - Backup good.css
+* - Backup good.js
+samplecode.txt
